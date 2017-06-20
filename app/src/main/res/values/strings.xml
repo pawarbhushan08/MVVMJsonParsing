@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVVMJsonParsing</string>
+    <string name="loading_persons">Loading Persons</string>
+    <string name="error_loading_person">Some Error Exists</string>
+</resources>
