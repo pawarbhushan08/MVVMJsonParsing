@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.widget.ImageView;
 
 import com.example.bhushan.mvvmjsonparsing.Model.Person;
+import com.example.bhushan.mvvmjsonparsing.R;
 import com.squareup.picasso.Cache;
 import com.squareup.picasso.Picasso;
 
@@ -16,38 +17,44 @@ import com.squareup.picasso.Picasso;
  */
 
 public class DataPersonViewModel extends BaseObservable {
-    private Person person;
+    private static ImageView imageView;
+    private static String url;
+    private Person persons;
     private Context context;
 
-    public DataPersonViewModel(Person person, Context context){
-        this.person = person;
+    public DataPersonViewModel(Person persons, Context context){
+        this.persons = persons;
         this.context = context;
     }
 
     public String getId(){
-        return person.id;
+        return persons.id;
     }
 
     public String getFirstname(){
-        return person.firstname;
+        return persons.firstname;
     }
 
     public String getLastname(){
-        return person.lastname;
+        return persons.lastname;
     }
+
+
 
     public String getImage(){
-        return person.image;
+        return persons.image;
     }
 
-    @BindingAdapter("imageUrl")
-    public static void setImageUrl(ImageView imageView,String url){
-        Picasso.with(imageView.getContext()).load(url).resize(80,80).into(imageView);
+    @BindingAdapter({"android:src"})
+    public static void loadImage(ImageView imageView,String url){
+        DataPersonViewModel.imageView = imageView;
+        DataPersonViewModel.url = url;
+        Picasso.with(imageView.getContext()).load(url).into(imageView);
 
     }
 
-    public void setPerson(Person person){
-        this.person = person;
+    public void setPerson(Person persons){
+        this.persons = persons;
         notifyChange();
     }
 

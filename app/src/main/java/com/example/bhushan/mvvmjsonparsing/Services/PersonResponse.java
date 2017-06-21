@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PersonResponse {
 
-    @SerializedName("results") private List<Person> personList;
+    @SerializedName("persons") private List<Person> personList;
 
     public List<Person> getPersonList(){
         return personList;

@@ -1,5 +1,8 @@
 package com.example.bhushan.mvvmjsonparsing.Model;
 
+import android.graphics.Picture;
+import android.media.*;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;

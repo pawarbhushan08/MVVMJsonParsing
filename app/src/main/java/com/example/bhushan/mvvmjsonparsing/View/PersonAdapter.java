@@ -56,12 +56,12 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonAdap
             this.mItemPersonBinding = itemPersonBinding;
         }
 
-        void bindPerson(Person person) {
+        void bindPerson(Person persons) {
             if (mItemPersonBinding.getPersonViewModel() == null){
-                mItemPersonBinding.setPersonViewModel(new DataPersonViewModel(person,itemView.getContext()));
+                mItemPersonBinding.setPersonViewModel(new DataPersonViewModel(persons,itemView.getContext()));
             }
             else {
-                mItemPersonBinding.getPersonViewModel().setPerson(person);
+                mItemPersonBinding.getPersonViewModel().setPerson(persons);
             }
         }
     }
