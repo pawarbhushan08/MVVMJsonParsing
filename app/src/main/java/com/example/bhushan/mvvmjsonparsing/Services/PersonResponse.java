@@ -17,7 +17,4 @@ public class PersonResponse {
         return personList;
     }
 
-    public void setPersonList(List<Person> mPersonList){
-        this.personList = mPersonList;
-    }
 }

@@ -11,6 +11,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 import com.example.bhushan.mvvmjsonparsing.Model.Person;
 import com.example.bhushan.mvvmjsonparsing.PersonApplication;
@@ -29,18 +30,11 @@ import java.util.Observable;
 
 public class PersonViewModel extends Observable{
 
-
     public ObservableInt personRecycler;
-
-
 
     private List<Person> personList;
     private Context context;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
-
-
-
-
 
     public PersonViewModel(@NonNull Context context){
         this.context = context;
@@ -48,14 +42,7 @@ public class PersonViewModel extends Observable{
         personRecycler = new ObservableInt(View.GONE);
         initializeViews();
         pullPersonList();
-
     }
-
-    /*public void onClickFabLoad(View view){
-        initializeViews();
-        pullPersonList();
-    }*/
-
 
     public void initializeViews() {
 
@@ -64,15 +51,14 @@ public class PersonViewModel extends Observable{
     }
 
     public void pullPersonList() {
-        PersonApplication personApplication = PersonApplication.create(context);
-        PersonService personService = personApplication.getPersonService();
 
-        Disposable disposable = personService.pullPerson(PersonFactory.PERSON_URL).subscribeOn(personApplication.subscribeScheduler()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PersonResponse>() {
+        PersonService personService = PersonFactory.create();
+
+        Disposable disposable = personService.pullPerson(PersonFactory.PERSON_URL).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PersonResponse>() {
             @Override
             public void accept(PersonResponse personResponse) throws Exception {
+
                 changePersonDataSet(personResponse.getPersonList());
-
-
                 personRecycler.set(View.VISIBLE);
             }
 
@@ -80,8 +66,6 @@ public class PersonViewModel extends Observable{
 
             @Override
             public void accept(Throwable throwable) throws Exception {
-
-
 
                 personRecycler.set(View.GONE);
 
@@ -100,7 +84,6 @@ public class PersonViewModel extends Observable{
         if (compositeDisposable !=null && !compositeDisposable.isDisposed()){
             compositeDisposable.dispose();
         }
-        
         compositeDisposable = null;
         context = null;
     }

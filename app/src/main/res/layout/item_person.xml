@@ -50,7 +50,6 @@
                 android:text="@{personViewModel.lastname}"
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
-            <!---->
 
             <TextView
                 android:id="@+id/tvid"
@@ -59,7 +58,7 @@
                 android:text="@{personViewModel.id}"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
-            <!---->
+
         </LinearLayout>
     </LinearLayout>
 

@@ -15,8 +15,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class PersonApplication extends Application{
 
-    private PersonService personService;
-    private Scheduler scheduler;
 
     public static PersonApplication create(Context context) {
         return PersonApplication.get(context);
@@ -26,29 +24,4 @@ public class PersonApplication extends Application{
         return (PersonApplication) context.getApplicationContext();
     }
 
-
-    public PersonService getPersonService() {
-        if (personService == null){
-            personService = PersonFactory.create();
-        }
-
-        return personService;
-    }
-
-    public void setPersonService(PersonService personService){
-        this.personService = personService;
-    }
-
-    public Scheduler subscribeScheduler() {
-
-        if (scheduler == null){
-            scheduler = Schedulers.io();
-        }
-
-        return scheduler;
-    }
-
-    public void setScheduler(Scheduler scheduler){
-        this.scheduler = scheduler;
-    }
 }

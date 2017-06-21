@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
     private void setupObserver(Observable observable) {
         observable.addObserver(this);
-        /*personViewModel.initializeViews();
-        personViewModel.pullPersonList();*/
     }
 
     private void setupListPersonView(RecyclerView listPerson) {
