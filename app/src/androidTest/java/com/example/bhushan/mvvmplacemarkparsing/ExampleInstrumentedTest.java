@@ -1,4 +1,4 @@
-package com.example.bhushan.mvvmjsonparsing;
+package com.example.bhushan.mvvmplacemarkparsing;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

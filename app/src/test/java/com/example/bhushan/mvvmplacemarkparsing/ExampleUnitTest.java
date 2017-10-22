@@ -1,4 +1,4 @@
-package com.example.bhushan.mvvmjsonparsing;
+package com.example.bhushan.mvvmplacemarkparsing;
 
 import org.junit.Test;
 

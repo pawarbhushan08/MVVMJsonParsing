@@ -7,23 +7,31 @@
         <import type="android.databinding.ObservableInt"/>
         <variable
             name="mainViewModel"
-            type="com.example.bhushan.mvvmjsonparsing.ViewModel.PersonViewModel"/>
+            type="com.example.bhushan.mvvmplacemarkparsing.ViewModel.PlacemarkViewModel"/>
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_show_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Locations on Map "
+            />
+
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/list_person"
+            android:id="@+id/list_placemark"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:orientation="vertical"
             android:scrollbars="vertical"
-            android:visibility="@{mainViewModel.personRecycler}"
-            tools:listitem="@layout/item_person"/>
+            android:visibility="@{mainViewModel.placemarkRecycler}"
+            tools:listitem="@layout/item_placemark"/>
+
     </LinearLayout>
 
 </layout>

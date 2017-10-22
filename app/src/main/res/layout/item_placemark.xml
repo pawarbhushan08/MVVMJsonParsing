@@ -3,28 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
         <variable
-            name="personViewModel"
-            type="com.example.bhushan.mvvmjsonparsing.ViewModel.DataPersonViewModel"/>
+            name="placemarkViewModel"
+            type="com.example.bhushan.mvvmplacemarkparsing.ViewModel.DataPlacemarkViewModel"/>
     </data>
 
 
-
     <LinearLayout
-        android:id="@+id/item_person"
+        android:id="@+id/item_placemark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_margin="5dp"
+        android:orientation="horizontal"
         android:weightSum="3">
 
-        <ImageView
-            android:id="@+id/ivImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:src="@{personViewModel.image}"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,30 +31,49 @@
             android:paddingLeft="10dp">
 
             <TextView
-                android:id="@+id/tvfirstName"
+                android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{personViewModel.firstname}"
+                android:text="@{placemarkViewModel.address}"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:verticalScrollbarPosition="right" />
 
             <TextView
-                android:id="@+id/tvlastName"
+                android:id="@+id/engineType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{personViewModel.lastname}"
+                android:text="@{placemarkViewModel.engineType}"
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvid"
+                android:id="@+id/exterior"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{personViewModel.id}"
+                android:text="@{placemarkViewModel.exterior}"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/interior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{placemarkViewModel.interior}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{placemarkViewModel.name}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+
         </LinearLayout>
+
     </LinearLayout>
 
 

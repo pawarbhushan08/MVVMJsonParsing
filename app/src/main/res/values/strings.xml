@@ -1,5 +1,23 @@
 <resources>
-    <string name="app_name">MVVMJsonParsing</string>
-    <string name="loading_persons">Loading Persons</string>
-    <string name="error_loading_person">Some Error Exists</string>
+    <string name="address">Address:</string>
+    <string name="engineType">Engine Type:</string>
+    <string name="exterior">Exterior:</string>
+    <string name="interior">Interior:</string>
+    <string name="name">Name:</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="app_name">MapsDemo</string>
+
+    <string name="google_api_key"></string>
+
+    <string name="action_clear">Clear</string>
+    <string name="action_circle">Draw Circle</string>
+    <string name="action_overlay">Draw Overlay</string>
+    <string name="action_polygon">Draw Polygon</string>
+    <string name="action_traffic">Toggle Traffic</string>
+    <string name="action_cycle_map_type">Cycle Map Type</string>
+
+    <string name="dialog_play_services_unavailable">Google Play Services are unavailable.</string>
+    <string name="dialog_download_play_services">Download Play Services</string>
+    <string name="dialog_close_program">Close Program</string>
+
 </resources>
